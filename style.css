@@ -7,7 +7,7 @@ html {
 }
 
 body {
-	background: linear-gradient(239.56deg, #07101b 4.77%, #476f93 100.83%);
+	background: linear-gradient(239.56deg, #07101b 4.77%, #030404 100.83%);
 
 	overflow-x: hidden;
 
@@ -43,18 +43,52 @@ html {
 	background: #ffffff;
 	filter: blur(100px);
 	border-radius: 21px;
+
+	/* animation: globAnimationRight 2s infinite alternate-reverse; */
 }
 
 .glob_left {
 	position: absolute;
 	width: 442px;
 	height: 142px;
-	left: -124px;
-	top: 156px;
+
+	left: -20%;
+	top: 10%;
 
 	background: #ffffff;
 	filter: blur(100px);
 	border-radius: 21px;
+
+	/* animation: globAnimationLeft 2s infinite alternate-reverse;*/
+}
+
+@keyframes globAnimationRight {
+	0% {
+		transform: translate(20%, -10%) rotate(0deg) scaleY(100%);
+		filter: blur(90px);
+	}
+
+	100% {
+		transform: translate(10%, -50vh) rotate(-50deg) scale(110%);
+		filter: blur(120px);
+	}
+}
+
+@keyframes globAnimationLeft {
+	0% {
+		transform: translate(10%, 10%) rotate(0deg) scaleY(100%);
+		filter: blur(90px);
+	}
+
+	50% {
+		transform: translate(100vw, 100vh) rotate(280deg) scale(110%);
+		filter: blur(120px);
+	}
+
+	100% {
+		transform: translate(10vw, 70vh) rotate(280deg) scale(80%);
+		filter: blur(120px);
+	}
 }
 
 .backgroundHoop {

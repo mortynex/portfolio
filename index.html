@@ -118,16 +118,20 @@
 			</nav>
 		</header>
 
-		<div class="glob_left" data-scroll-speed="-3"></div>
-		<div class="glob_right" data-scroll-speed="-3"></div>
+		<div class="glob_left" data-scroll-speed="-3" data-scroll-type="left"></div>
+		<div
+			class="glob_right"
+			data-scroll-speed="-3"
+			data-scroll-type="right"
+		></div>
 
 		<main>
 			<article class="titleSection">
-				<section class="titleSectionRight">
+				<section class="titleSectionRight" data-scroll-speed-left="3">
 					<h2 class="secondaryTitle">Hello!<br />I'm</h2>
 					<h2 class="mainTitle mainTitleRight">POL</h2>
 				</section>
-				<section class="titleSectionLeft">
+				<section class="titleSectionLeft" data-scroll-speed-left="-3">
 					<h2 class="mainTitle mainTitleLeft">TAK</h2>
 					<h2 class="secondaryTitle">a software<br />engineer</h2>
 				</section>
@@ -141,7 +145,7 @@
 			fill="none"
 			class="backgroundHoop"
 			xmlns="http://www.w3.org/2000/svg"
-			data-scroll-speed="2"
+			data-scroll-speed-top="5"
 		>
 			<g filter="url(#filter0_f_472_180)">
 				<path
