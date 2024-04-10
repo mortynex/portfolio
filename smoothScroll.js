@@ -37,7 +37,7 @@ document.body.addEventListener("scroll", () => {
 		}
 
 		if (scrollSpeedRight) {
-			elem.style.left = `calc(${defaultStyleValues.get(elem).right} + ${
+			elem.style.right = `calc(${defaultStyleValues.get(elem).right} + ${
 				document.body.scrollTop / scrollSpeedRight
 			}px)`;
 		}
