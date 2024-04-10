@@ -6,25 +6,23 @@ const smoothScrollElements = [
 
 const defaultStyleValues = new Map();
 
-window.addEventListener("load", () => {
-	for (const elem of smoothScrollElements) {
-		const style = window.getComputedStyle(elem);
+for (const elem of smoothScrollElements) {
+	const style = window.getComputedStyle(elem);
 
-		const getValue = (value) => (!value.endsWith("px") ? "0px" : value);
+	const getValue = (value) => (!value.endsWith("px") ? "0px" : value);
 
-		defaultStyleValues.set(elem, {
-			top: getValue(style.top),
-			left: getValue(style.left),
-			right: getValue(style.right),
-		});
+	defaultStyleValues.set(elem, {
+		top: getValue(style.top),
+		left: getValue(style.left),
+		right: getValue(style.right),
+	});
 
-		if (style.position === "static") {
-			elem.style.position = "relative";
-		}
+	if (style.position === "static") {
+		elem.style.position = "relative";
 	}
+}
 
-	console.log(defaultStyleValues);
-});
+console.log(defaultStyleValues);
 
 document.body.addEventListener("scroll", () => {
 	for (const elem of smoothScrollElements) {

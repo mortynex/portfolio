@@ -30,6 +30,13 @@ html {
 	overflow-y: hidden;
 }
 
+:root {
+	--navbarHeight: 12rem;
+	--fontSize: 40vh;
+	--fontHeight: calc(var(--fontSize) * 0.75);
+	--textGap: 2rem;
+}
+
 .glob_right {
 	/* Rectangle 9 */
 
@@ -94,6 +101,8 @@ html {
 .backgroundHoop {
 	position: absolute;
 
+	height: 80vh;
+
 	top: 60%;
 	left: 50%;
 
@@ -110,10 +119,6 @@ html {
 	100% {
 		transform: translate(-50%, -50%) rotate(-5deg);
 	}
-}
-
-.mainTitle {
-	line-height: 75%;
 }
 
 .titleSection {
@@ -153,12 +158,6 @@ html {
 	z-index: 10;
 }
 
-:root {
-	--navbarHeight: 12rem;
-	--fontHeight: 300px;
-	--textGap: 2rem;
-}
-
 .titleSectionLeft {
 	position: absolute;
 	left: -5px;
@@ -166,7 +165,10 @@ html {
 }
 
 .mainTitle {
-	font-size: 400px;
+	font-size: var(--fontSize);
+
+	line-height: 75%;
+
 	-webkit-text-stroke: 10px white;
 	/* text-shadow: 0 0 20px white; */
 }
@@ -187,6 +189,18 @@ nav {
 	display: flex;
 
 	align-items: center;
+
+	animation: navAnimation 2s ease forwards;
+}
+
+@keyframes navAnimation {
+	0% {
+		filter: blur(4px);
+	}
+
+	100% {
+		filter: blur(0px);
+	}
 }
 
 header {
@@ -202,14 +216,12 @@ nav .logo,
 nav .navList li {
 	cursor: pointer;
 
-	filter: blur(2px);
-
 	z-index: 20;
 
 	transition: filter 0.5s ease;
 }
 
-nav .navList li svg {
+nav .navList li .navItemIcon {
 	width: 1em;
 	height: 1em;
 }
@@ -222,7 +234,6 @@ nav .navList li {
 
 nav .logo:hover,
 nav .navList li:hover {
-	filter: blur(0);
 }
 
 .logo .logoTop {
@@ -233,5 +244,14 @@ nav .navList li:hover {
 	display: flex;
 	justify-content: right;
 	width: 100%;
-	gap: 10vw;
+	gap: 8vw;
+}
+.navItemUnderline {
+	position: relative;
+
+	width: 100%;
+
+	stroke-dashoffset: 1000;
+	stroke-dasharray: 100;
+	left: 0;
 }
