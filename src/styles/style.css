@@ -34,6 +34,16 @@ html {
 	overflow-y: hidden;
 }
 
+@keyframes hoopAnimation {
+	0% {
+		transform: translate(-47%, -53%) rotate(0deg);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) rotate(-5deg);
+	}
+}
+
 .highlighted {
 	color: var(--secondary-color);
 }
