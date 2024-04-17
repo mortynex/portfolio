@@ -30,11 +30,17 @@ html {
 	overflow-y: hidden;
 }
 
+.highlighted {
+	color: var(--secondary-color);
+}
+
 :root {
 	--navbarHeight: 12rem;
 	--fontSize: 40vh;
 	--fontHeight: calc(var(--fontSize) * 0.75);
 	--textGap: 2rem;
+
+	--secondary-color: #e28af0;
 }
 
 .glob_right {
@@ -56,10 +62,10 @@ html {
 
 .glob_left {
 	position: absolute;
-	width: 442px;
-	height: 142px;
+	width: 30vw;
+	height: 20vh;
 
-	left: -20%;
+	left: 0%;
 	top: 10%;
 
 	background: #ffffff;
@@ -108,6 +114,8 @@ html {
 
 	transform: translate(-50%, -50%);
 
+	color: var(--secondary-color);
+
 	animation: hoopAnimation 3s infinite alternate-reverse;
 }
 
@@ -151,7 +159,7 @@ html {
 
 .titleSectionRight {
 	position: absolute;
-	right: -5px;
+	right: 10%;
 
 	top: var(--navbarHeight);
 
@@ -160,8 +168,41 @@ html {
 
 .titleSectionLeft {
 	position: absolute;
-	left: -5px;
+	left: 10%;
 	top: calc(var(--navbarHeight) + var(--fontHeight) + var(--textGap));
+}
+
+.flower {
+	position: absolute;
+
+	width: 100px;
+	height: 100px;
+
+	top: 30%;
+	left: 20%;
+
+	transform: translate(-50%, -50%);
+
+	animation: flowerAnimation 2s infinite alternate-reverse;
+	animation-play-state: paused;
+
+	cursor: pointer;
+
+	z-index: 100;
+}
+
+@keyframes flowerAnimation {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+.flower:hover {
+	animation-play-state: running;
 }
 
 .mainTitle {
