@@ -1,6 +1,6 @@
 const smoothScrollElements = [
 	...document.querySelectorAll(
-		"*[data-scroll-speed-top], *[data-scroll-speed-left], *[data-scroll-speed-right]"
+		"*[data-scroll-speed-top], *[data-scroll-speed-left], *[data-scroll-speed-right], *[data-scroll-speed-rotation]"
 	),
 ];
 
@@ -26,7 +26,12 @@ console.log(defaultStyleValues);
 
 document.body.addEventListener("scroll", () => {
 	for (const elem of smoothScrollElements) {
-		const { scrollSpeedTop, scrollSpeedRight, scrollSpeedLeft } = elem.dataset;
+		const {
+			scrollSpeedTop,
+			scrollSpeedRight,
+			scrollSpeedLeft,
+			scrollSpeedRotation,
+		} = elem.dataset;
 
 		if (scrollSpeedTop) {
 			elem.style.top = `calc(${defaultStyleValues.get(elem).top} + ${
@@ -44,6 +49,10 @@ document.body.addEventListener("scroll", () => {
 			elem.style.left = `calc(${defaultStyleValues.get(elem).left} + ${
 				document.body.scrollTop / scrollSpeedLeft
 			}px)`;
+		}
+
+		if (scrollSpeedRotation) {
+			elem.style.rotate = `${document.body.scrollTop / scrollSpeedRotation}deg`;
 		}
 	}
 });

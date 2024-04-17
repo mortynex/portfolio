@@ -20,6 +20,10 @@ body {
 	scrollbar-width: none;
 }
 
+* {
+	transition: right 0.1s, left 0.1s, top 0.1s, bottom 0.1s;
+}
+
 main {
 	height: 200vh;
 }
@@ -119,16 +123,6 @@ html {
 	animation: hoopAnimation 3s infinite alternate-reverse;
 }
 
-@keyframes hoopAnimation {
-	0% {
-		transform: translate(-47%, -53%) rotate(0deg);
-	}
-
-	100% {
-		transform: translate(-50%, -50%) rotate(-5deg);
-	}
-}
-
 .titleSection {
 	color: white;
 	font-weight: 900;
@@ -181,28 +175,15 @@ html {
 	top: 30%;
 	left: 20%;
 
-	transform: translate(-50%, -50%);
-
-	animation: flowerAnimation 2s infinite alternate-reverse;
-	animation-play-state: paused;
-
 	cursor: pointer;
 
 	z-index: 100;
-}
 
-@keyframes flowerAnimation {
-	0% {
-		transform: translate(-50%, -50%) rotate(0deg);
-	}
-
-	100% {
-		transform: translate(-50%, -50%) rotate(360deg);
-	}
+	transition: scale 0.3s;
 }
 
 .flower:hover {
-	animation-play-state: running;
+	scale: 1.1;
 }
 
 .mainTitle {
