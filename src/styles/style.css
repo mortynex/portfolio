@@ -130,7 +130,7 @@ html {
 
 	color: var(--secondary-color);
 
-	animation: hoopAnimation 3s infinite alternate-reverse;
+	animation: hoopAnimation 8s infinite alternate-reverse;
 }
 
 .titleSection {
