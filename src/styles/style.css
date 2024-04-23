@@ -50,6 +50,7 @@ html {
 
 :root {
 	--navbarHeight: 12rem;
+	--titleOffset: var(--navbarHeight);
 	--fontSize: 40vh;
 	--fontHeight: calc(var(--fontSize) * 0.75);
 	--textGap: 2rem;
@@ -165,7 +166,7 @@ html {
 	position: absolute;
 	right: 10%;
 
-	top: var(--navbarHeight);
+	top: var(--titleOffset);
 
 	z-index: 10;
 }
@@ -173,7 +174,7 @@ html {
 .titleSectionLeft {
 	position: absolute;
 	left: 10%;
-	top: calc(var(--navbarHeight) + var(--fontHeight) + var(--textGap));
+	top: calc(var(--titleOffset) + var(--fontHeight) + var(--textGap));
 }
 
 .flower {
@@ -242,6 +243,8 @@ header {
 nav .logo {
 	-webkit-text-stroke: 2px white;
 	line-height: 90%;
+
+	display: hidden;
 }
 
 nav .logo,
@@ -286,4 +289,48 @@ nav .navList li:hover {
 	stroke-dashoffset: 1000;
 	stroke-dasharray: 100;
 	left: 0;
+}
+
+.page {
+	height: 100svh;
+}
+
+@media screen and (max-width: 1100px) {
+	nav {
+		padding: 0 4rem;
+
+		justify-content: space-between;
+	}
+
+	nav .navList {
+		display: none;
+	}
+
+	.flower {
+		height: 4rem;
+
+		top: calc(var(--navbarHeight) / 2 - 2rem);
+		right: 3rem;
+		left: initial;
+	}
+
+	.backgroundHoop {
+		width: 80%;
+	}
+
+	:root {
+		--titleOffset: 40%;
+		--fontSize: 20vw;
+		--textGap: 2vh;
+
+		--secondary-color: #e28af0;
+	}
+
+	.mainTitle {
+		-webkit-text-stroke: 8px white;
+	}
+
+	.secondaryTitle {
+		font-size: 2rem;
+	}
 }
