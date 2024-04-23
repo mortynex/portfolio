@@ -191,6 +191,8 @@ html {
 	z-index: 100;
 
 	transition: scale 0.3s;
+
+	user-select: none;
 }
 
 .flower:hover {
