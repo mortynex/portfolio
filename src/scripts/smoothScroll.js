@@ -1,8 +1,10 @@
 const smoothScrollElements = [
 	...document.querySelectorAll(
-		"*[data-scroll-speed-top], *[data-scroll-speed-left], *[data-scroll-speed-right], *[data-scroll-speed-rotation]"
+		"*[data-scroll-speed-top], *[data-scroll-speed-left], *[data-scroll-speed-right], *[data-scroll-speed-rotation], *[data-scroll-speed-opacity]"
 	),
 ];
+
+const logo = document.querySelector(".logo");
 
 const defaultStyleValues = new Map();
 
@@ -15,6 +17,7 @@ for (const elem of smoothScrollElements) {
 		top: getValue(style.top),
 		left: getValue(style.left),
 		right: getValue(style.right),
+		opacity: style.opacity,
 	});
 
 	if (style.position === "static") {
@@ -31,6 +34,7 @@ document.body.addEventListener("scroll", () => {
 			scrollSpeedRight,
 			scrollSpeedLeft,
 			scrollSpeedRotation,
+			scrollSpeedOpacity,
 		} = elem.dataset;
 
 		if (scrollSpeedTop) {
@@ -53,6 +57,32 @@ document.body.addEventListener("scroll", () => {
 
 		if (scrollSpeedRotation) {
 			elem.style.rotate = `${document.body.scrollTop / scrollSpeedRotation}deg`;
+		}
+
+		if (scrollSpeedOpacity) {
+			elem.style.opacity = `${document.body.scrollTop / scrollSpeedOpacity}`;
+		}
+	}
+
+	logo.style.opacity = `${
+		(document.body.scrollTop - window.innerHeight * 0.8) / 100
+	}`;
+});
+
+document.addEventListener("resize", () => {
+	for (const elem of smoothScrollElements) {
+		const style = window.getComputedStyle(elem);
+
+		const getValue = (value) => (!value.endsWith("px") ? "0px" : value);
+
+		defaultStyleValues.set(elem, {
+			top: getValue(style.top),
+			left: getValue(style.left),
+			right: getValue(style.right),
+		});
+
+		if (style.position === "static") {
+			elem.style.position = "relative";
 		}
 	}
 });
