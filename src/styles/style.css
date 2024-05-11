@@ -751,6 +751,8 @@ nav {
 	cursor: pointer;
 
 	display: block;
+
+	user-select: none;
 }
 
 .returnBackPage {
