@@ -95,10 +95,9 @@ rocket.addEventListener("click", () => {
 		// out animation
 
 		return rocket
-			.animate([{ transform: "translate(100vh, -100vw) scale(25)" }], {
+			.animate([{ transform: "translate(150vw, -150vh) scale(25)" }], {
 				duration: 6000,
 				easing: "ease-in-out",
-				fill: "forwards",
 				iterations: 1,
 			})
 			.addEventListener("finish", () => {

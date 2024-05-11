@@ -685,7 +685,7 @@ nav {
 
 	font-size: 1rem;
 
-	padding-top: 10vh;
+	padding-top: 15vh;
 	padding-bottom: 20vh;
 }
 
@@ -705,6 +705,8 @@ nav {
 
 	margin-top: 1em;
 	margin-left: 1em;
+
+	user-select: none;
 }
 
 .contactMailText {
@@ -727,6 +729,8 @@ nav {
 
 .contactMailText .wavingIcon {
 	font-size: 1.3em;
+
+	user-select: none;
 }
 
 .contactMailText:hover .wavingIcon {
@@ -753,6 +757,8 @@ nav {
 	display: block;
 
 	user-select: none;
+
+	font-size: 1.3em;
 }
 
 .returnBackPage {
