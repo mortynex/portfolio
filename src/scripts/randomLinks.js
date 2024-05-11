@@ -10,7 +10,7 @@ const LINK_TEXTS = [
 	"take a look 🫣",
 	"peek inside 👀",
 	"peek 👀",
-	"check out 🛒",
+	"check out 🧐",
 ];
 const generateRandomLinkText = (prev) => {
 	const randomLink = LINK_TEXTS[Math.floor(Math.random() * LINK_TEXTS.length)];
