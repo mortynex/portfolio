@@ -69,8 +69,32 @@ document.body.addEventListener("scroll", () => {
 	}`;
 });
 
-document.addEventListener("resize", () => {
+window.addEventListener("resize", () => {
 	for (const elem of smoothScrollElements) {
+		const {
+			scrollSpeedTop,
+			scrollSpeedRight,
+			scrollSpeedLeft,
+			scrollSpeedRotation,
+			scrollSpeedOpacity,
+		} = elem.dataset;
+
+		if (scrollSpeedTop) {
+			elem.style.top = ``;
+		}
+
+		if (scrollSpeedRight) {
+			elem.style.right = ``;
+		}
+
+		if (scrollSpeedLeft) {
+			elem.style.left = ``;
+		}
+
+		if (scrollSpeedRotation) {
+			elem.style.rotate = ``;
+		}
+
 		const style = window.getComputedStyle(elem);
 
 		const getValue = (value) => (!value.endsWith("px") ? "0px" : value);
