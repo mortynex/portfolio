@@ -858,4 +858,24 @@ nav {
 
 		top: 50%;
 	}
+
+	.aboutMeTextSection {
+		flex-direction: column !important;
+		text-align: center !important;
+	}
+
+	.contactCatchphrase {
+		text-align: center;
+	}
+
+	.contactsPage {
+		align-items: center;
+		flex-direction: column;
+
+		gap: 2em;
+	}
+
+	.contactMailText {
+		translate: 0em 0em;
+	}
 }
